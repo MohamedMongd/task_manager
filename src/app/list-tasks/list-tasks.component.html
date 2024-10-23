@@ -1,0 +1,24 @@
+<div class="container bg-light p-4 rounded my-3 mx-auto shadow">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let item of allTask">
+      <div class="card h-100 border rounded-3 shadow-sm" [ngClass]="{'bg-success-light': item.isCompleted, 'bg-white': !item.isCompleted}">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title">Task ID: {{ item.id }}</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" [ngClass]="{'text-decoration-line-through text-muted': item.isCompleted}">{{ item.title }}</h5>
+          <p class="card-text" [ngClass]="{'text-decoration-line-through text-muted': item.isCompleted}">{{ item.details }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <button *ngIf="!item.isCompleted" class="btn btn-sm btn-primary" [routerLink]="['/edit', item.id]">Edit</button>
+          <button (click)="deletItem(item.id)" class="btn btn-sm btn-danger mx-1">Delete</button>
+          <button (click)="toggleComplete(item)" 
+                  class="btn btn-sm" 
+                  [ngClass]="{'btn-success': item.isCompleted, 'btn-outline-success': !item.isCompleted}">
+            ✔️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

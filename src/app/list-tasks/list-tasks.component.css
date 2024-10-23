@@ -1,0 +1,26 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    min-height: 82.5vh;
+    justify-content: space-between;
+}
+
+.card {
+    border: none; /* إزالة الحدود الافتراضية */
+    border-radius: 15px; /* جعل الزوايا مستديرة */
+    transition: transform 0.2s, box-shadow 0.2s; /* تأثيرات التمرير */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* تكبير البطاقة عند تمرير الماوس */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* إضافة ظل */
+  }
+  
+  .bg-success-light {
+    background-color: rgba(76, 175, 80, 0.2); /* لون خلفية خفيف عند اكتمال المهمة */
+  }
+  
+  .bg-white {
+    background-color: white; /* لون الخلفية الافتراضي */
+  }
+  

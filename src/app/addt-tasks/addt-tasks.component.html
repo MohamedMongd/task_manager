@@ -1,0 +1,16 @@
+<section class="bg-light p-4 rounded my-3 w-75 mx-auto shadow">
+  <legend class="text-center fs-4 fw-bold mb-4">Add Task</legend>
+  <form>
+      <div class="mb-3">
+          <label for="txtTitle" class="form-label">Title</label>
+          <input type="text" name="title" [(ngModel)]="formData.title" class="form-control" id="txtTitle" placeholder="Enter task title" required>
+      </div>
+      <div class="mb-3">
+          <label for="txtDetails" class="form-label">Details</label>
+          <textarea name="details" [(ngModel)]="formData.details" class="form-control" id="txtDetails" placeholder="Enter task details" rows="4" required></textarea>
+      </div>
+      <div class="text-center mb-3">
+          <button type="button" (click)="add()" class="btn btn-success px-4">Add Task</button>
+      </div>
+  </form>
+</section>
